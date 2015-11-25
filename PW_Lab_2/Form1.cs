@@ -35,7 +35,8 @@ namespace PW_Lab_2
 
             textBox1.Text = "1";
             textBox2.Text = "1";
-            textBox3.Text = "1000";
+            textBox3.Text = "100";
+            checkBox1.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
