@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections;
 
 namespace PW_Lab_2
 {
     class CommonResource
     {
-        public string[] stringTab;
+        public ArrayList stringArray;
 
-        public CommonResource(int _parm)
+        public CommonResource()
         {
-            this.stringTab = new string[_parm];
+            this.stringArray = new ArrayList();
         }
     }
 }
