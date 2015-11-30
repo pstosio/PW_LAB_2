@@ -37,7 +37,6 @@ namespace PW_Lab_2
             textBox1.Text = "1";
             textBox2.Text = "1";
             textBox3.Text = "100";
-            checkBox1.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -120,7 +119,7 @@ namespace PW_Lab_2
                 if (localStartTime <= 10)
                 {
                     // Losowanie numeru zasobu od 1 do 5
-                    numerZasobu = numerZasobuRandom.Next(1, 5);
+                    numerZasobu = numerZasobuRandom.Next(1, 6);
 
                     // Czas korzystania z zasobu przez wątek w ms
                     localUsingTimeRandom = (_isHighFrequency == true) ? usingTime.Next(100, 1000) : usingTime.Next(1, 100);
