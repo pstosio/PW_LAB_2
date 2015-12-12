@@ -128,8 +128,9 @@ namespace PW_Lab_2
                         MyMonitor.uzyskajDostepIWykonajOperacje(numerZasobu, 
                                                                 Thread.CurrentThread.ManagedThreadId,
                                                                 _isHighFrequency ? 1 : 2,
-                                                                localUsingTimeRandom); 
-
+                                                                localUsingTimeRandom,
+                                                                checkBox1.Checked); 
+                    
                 }
             }
         }

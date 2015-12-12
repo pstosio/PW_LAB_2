@@ -25,7 +25,7 @@ namespace PW_Lab_2
 
         static private Stopwatch sw = new Stopwatch();
 
-        static public void uzyskajDostepIWykonajOperacje(int _numerZasobu, int _threadId, int _numerGrupy, int _czasDostepu)
+        static public void uzyskajDostepIWykonajOperacje(int _numerZasobu, int _threadId, int _numerGrupy, int _czasDostepu, bool _isPulseAll)
         {
             // wyzerowanie stop watcha
             sw.Reset();
@@ -46,7 +46,10 @@ namespace PW_Lab_2
                             Monitor.Exit(zasob1);
                         }
 
-                        zwolnijZasob(1);
+                        if(_isPulseAll)
+                            zwolnijDostepWszystkim(1);
+                        else
+                            zwolnijZasob(1);
 
                         break;
                     
@@ -62,7 +65,10 @@ namespace PW_Lab_2
                             Monitor.Exit(zasob2);
                         }
 
-                        zwolnijZasob(2);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(2);
+                        else
+                            zwolnijZasob(2);
 
                         break;
 
@@ -78,7 +84,10 @@ namespace PW_Lab_2
                             Monitor.Exit(zasob3);
                         }
 
-                        zwolnijZasob(3);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(3);
+                        else
+                            zwolnijZasob(3);
 
                         break;
 
@@ -94,7 +103,10 @@ namespace PW_Lab_2
                             Monitor.Exit(zasob4);
                         }
 
-                        zwolnijZasob(4);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(4);
+                        else
+                            zwolnijZasob(4);
 
                         break;
 
@@ -110,7 +122,10 @@ namespace PW_Lab_2
                             Monitor.Exit(zasob5);
                         }
 
-                        zwolnijZasob(5);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(5);
+                        else
+                            zwolnijZasob(5);
 
                         break;
                 }
@@ -129,8 +144,11 @@ namespace PW_Lab_2
                             wykonajOperacje(1, _threadId, _numerGrupy, _czasDostepu, sw.ElapsedMilliseconds);
                         }
 
-                        zwolnijZasob(1);
-                        //zwolnijDostepWszystkim(1);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(1);
+                        else
+                            zwolnijZasob(1);
+
                         break;
 
                     case 2:
@@ -143,8 +161,10 @@ namespace PW_Lab_2
                             wykonajOperacje(2, _threadId, _numerGrupy, _czasDostepu, sw.ElapsedMilliseconds);
                         }
 
-                        zwolnijZasob(2);
-                        //zwolnijDostepWszystkim(2);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(2);
+                        else
+                            zwolnijZasob(2);
                         break;
 
                     case 3:
@@ -157,8 +177,10 @@ namespace PW_Lab_2
                             wykonajOperacje(3, _threadId, _numerGrupy, _czasDostepu, sw.ElapsedMilliseconds);
                         }
 
-                        zwolnijZasob(3);
-                        //zwolnijDostepWszystkim(3);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(3);
+                        else
+                            zwolnijZasob(3);
 
                         break;
 
@@ -172,8 +194,10 @@ namespace PW_Lab_2
                             wykonajOperacje(4, _threadId, _numerGrupy, _czasDostepu, sw.ElapsedMilliseconds);
                         }
 
-                        zwolnijZasob(4);
-                        //zwolnijDostepWszystkim(4);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(4);
+                        else
+                            zwolnijZasob(4);
 
                         break;
 
@@ -187,8 +211,10 @@ namespace PW_Lab_2
                             wykonajOperacje(5, _threadId, _numerGrupy, _czasDostepu, sw.ElapsedMilliseconds);
                         }
 
-                        zwolnijZasob(5);
-                        //zwolnijDostepWszystkim(5);
+                        if (_isPulseAll)
+                            zwolnijDostepWszystkim(5);
+                        else
+                            zwolnijZasob(5);
 
                         break;
                 }
